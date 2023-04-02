@@ -33,7 +33,8 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
 	buf_set_keymap("n", "<C-j>", "<Cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	buf_set_keymap("i", "<C-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	buf_set_keymap("n", "<leader>fm", "<Cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+	buf_set_keymap("n", "<leader>fm", "<Cmd>lua vim.lsp.buf.format()<CR>", opts)
+	buf_set_keymap("n", "<leader>f", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 
 	local status_ok, illuminate = pcall(require, "illuminate")
