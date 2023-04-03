@@ -8,6 +8,7 @@ end
 ts.setup({
 	ensure_installed = {
         "go",
+		"rust",
 		"toml",
 		"json",
 		"yaml",

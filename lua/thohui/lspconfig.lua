@@ -36,7 +36,6 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<leader>fm", "<Cmd>lua vim.lsp.buf.format()<CR>", opts)
 	buf_set_keymap("n", "<leader>f", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
-
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
 		return
@@ -111,7 +110,30 @@ nvim_lsp.golangci_lint_ls.setup {
   },
 }
 
--- nvim_lsp.tailwindcss.setup({})
+local rt = require("rust-tools")
+
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+  },
+})
+
+
+-- nvim_lsp.rust_analyzer.setup{
+--   settings = {
+--     ['rust-analyzer'] = {
+--       diagnostics = {
+--         enable = true;
+--       }
+--     }
+--   }
+-- }
+nvim_lsp.tailwindcss.setup({})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,

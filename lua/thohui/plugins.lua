@@ -53,7 +53,8 @@ return require('packer').startup(function(use)
   --file tree
   use 'kyazdani42/nvim-tree.lua'
 
-  --File browsing
+  -- Rust Dev
+  use 'simrat39/rust-tools.nvim'
 
   --Buffer navigation
   use 'nvim-lualine/lualine.nvim'
