@@ -110,19 +110,6 @@ nvim_lsp.golangci_lint_ls.setup {
   },
 }
 
--- local rt = require("rust-tools")
---
--- rt.setup({
---   server = {
---     on_attach = function(_, bufnr)
---       t- Hover actions
---       vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
---       -- Code action groups
---       vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
---     end,
---   },
--- })
-
 nvim_lsp.rust_analyzer.setup({
     on_attach=on_attach,
     settings = {
@@ -145,15 +132,6 @@ nvim_lsp.rust_analyzer.setup({
     }
 })
 
--- nvim_lsp.rust_analyzer.setup{
---   settings = {
---     ['rust-analyzer'] = {
---       diagnostics = {
---         enable = true;
---       }
---     }
---   }
--- }
 nvim_lsp.tailwindcss.setup({})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
