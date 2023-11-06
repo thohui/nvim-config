@@ -1,16 +1,4 @@
-local status, nvim_tree = pcall(require, "nvim-tree")
-if not status then
-	return
-end
-
-local config_status, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status then
-	return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
-nvim_tree.setup({
+require("nvim-tree").setup({
 	on_attach = on_attach, 
 	hijack_directories = {
 		enable = false,

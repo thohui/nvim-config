@@ -19,7 +19,13 @@ require('lazy').setup({
 
   --Themes
   {'catppuccin/nvim', name = 'catppuccin'},
-
+  {
+    'folke/tokyonight.nvim',
+    name = 'tokyonight',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   --Treesitter
   'nvim-treesitter/nvim-treesitter',
   'nvim-treesitter/nvim-treesitter-textobjects',
@@ -50,7 +56,7 @@ require('lazy').setup({
   'williamboman/nvim-lsp-installer',
  
   --file tree
-  'kyazdani42/nvim-tree.lua',
+  {'kyazdani42/nvim-tree.lua', name = 'nvim-tree'},
 
   -- Rust Dev
   'simrat39/rust-tools.nvim',

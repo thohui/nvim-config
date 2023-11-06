@@ -12,7 +12,7 @@ mason.setup({})
 lspconfig.setup({
 	ensure_installed = {
 		"tsserver",
-		"eslint_d",
+		"eslint",
 		"lua_ls",
 		"rust_analyzer",
 		"gopls"
