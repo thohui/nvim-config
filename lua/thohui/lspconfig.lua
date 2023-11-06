@@ -27,11 +27,10 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	buf_set_keymap("n", "gh", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	buf_set_keymap("n", "<leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	buf_set_keymap("n", "ra", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	buf_set_keymap("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
-	buf_set_keymap("n", "<C-j>", "<Cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+	buf_set_keymap("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts) buf_set_keymap("n", "<C-j>", "<Cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	buf_set_keymap("i", "<C-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	buf_set_keymap("n", "<leader>fm", "<Cmd>lua vim.lsp.buf.format()<CR>", opts)
 	buf_set_keymap("n", "<leader>f", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
@@ -131,8 +130,6 @@ nvim_lsp.rust_analyzer.setup({
         }
     }
 })
-
-nvim_lsp.tailwindcss.setup({})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,

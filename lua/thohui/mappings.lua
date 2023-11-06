@@ -77,10 +77,6 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
---nvTerm 
-keymap("n", "<leader>h", 'lua require("nvterm.terminal").new "horizontal', opts)
-keymap("n", "<leader>v", 'lua require("nvterm.terminal").new "vertical', opts)
-
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
